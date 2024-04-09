@@ -1,0 +1,171 @@
+<div class="bienvenida">
+    <h1>{{ nombre_usuario ? 'Bienvenido, ' + nombre_usuario : 'Aún no se ha encontrado ningún cliente.' }}</h1>
+    <p *ngIf="nombre_usuario">{{ 'Tienes ' + puntos + ' puntos.' }}</p>
+    <p>{{ nombre_usuario ? '¿Qué operación deseas realizar?' : 'Indícale al cliente que pase su tarjeta frente al lector.' }}</p>
+    <button *ngIf="nombre_usuario" (click)="openModal('agregarPuntos')">Agregar puntos</button>
+    <button (click)="buscarTarjeta()" [disabled]="buscandoTarjeta">Buscar tarjeta</button>
+    <button *ngIf="nombre_usuario" (click)="openModal('canjearPuntos')">Canjear puntos</button>
+    <p *ngIf="buscandoTarjeta">Buscando tarjeta...</p>
+    <button *ngIf="buscandoTarjeta" (click)="terminarBusqueda()">Terminar búsqueda</button>
+</div>
+
+<div class="modo-dios-container">
+    <p>Botones para el modo dios</p>
+    <p>Obviamente después se va a quitar, wowo</p>
+    <button (click)="activarModoDios()">Activar modo dios</button>
+    <button (click)="openModal('guardarTarjeta')">Agregar tarjeta</button>
+</div>
+
+<!-- Modal para guardar tarjeta -->
+<div class="modal" [ngClass]="{'show': showModal['guardarTarjeta']}" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Agregar tarjeta</h2>
+            </div>
+            <form class="mt-4" [formGroup]="formTarjeta" (ngSubmit)="confirmAddCard()">
+                <div class="modal-body">
+                    <p>¿Deseas agregar esta tarjeta?</p>
+                    <select class="form-control form-control-lg" formControlName="nombre_usuario">
+                        <option value="">Selecciona un nombre de usuario</option>
+                        <!-- <option *ngFor="let user of users" [value]="user.nombre">{{ user.nombre }}</option> -->
+                        <option>Yerin Axel</option>
+                        <option>Bet-birai</option>
+                    </select>
+                </div>                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                        (click)="closeModal('guardarTarjeta')">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="formTarjeta.invalid">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para agregar puntos -->
+<div class="modal" [ngClass]="{'show': showModal['agregarPuntos']}" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Agregar puntos</h2>
+            </div>
+            <div class="modal-body">
+
+                <!-- Tabla para sistemas de puntos de tipo Visita -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Puntos</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of puntosSistemaVisita">
+                            <td><input type="checkbox" [checked]="isSelected(item)" (change)="toggleSelection(item)"></td>
+                            <td>{{ item.puntos }}</td>
+                            <td>{{ item.descripcion }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Tabla para sistemas de puntos de tipo Producto -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Precio</th>
+                            <th>Puntos</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of puntosSistemaProducto">
+                            <td><input type="checkbox" [checked]="isSelected(item)" (change)="toggleSelection(item)"></td>
+                            <td>{{ item.precio }}</td>
+                            <td>{{ item.puntos }}</td>
+                            <td>{{ item.descripcion }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Tabla para sistemas de puntos de tipo Servicio -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Precio</th>
+                            <th>Puntos</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of puntosSistemaServicio">
+                            <td><input type="checkbox" [checked]="isSelected(item)" (change)="toggleSelection(item)"></td>
+                            <td>{{ item.precio }}</td>
+                            <td>{{ item.puntos }}</td>
+                            <td>{{ item.descripcion }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="closeModal('agregarPuntos')">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="operatePointsCombined()">Agregar</button>
+            </div>
+            <p *ngIf="!seleccionadoAlMenosUno" class="error-message">Por favor, selecciona al menos un checkbox.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para canjear puntos -->
+<div class="modal" [ngClass]="{'show': showModal['canjearPuntos']}" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Canjear puntos</h2>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Puntos</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se iterará sobre los resultados del endpoint getPointsSystemByKeyword -->
+                        <!-- Cada fila de la tabla tendrá un checkbox -->
+                        <tr *ngFor="let item of puntosSistemaRecompensa">
+                            <td><input type="checkbox" [checked]="isSelected(item)" (change)="toggleSelection(item)"></td>
+                            <td>{{ item.puntos }}</td>
+                            <td>{{ item.descripcion }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="closeModal('canjearPuntos')">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="operatePointsCombined()">Canjear</button>
+            </div>
+            <p *ngIf="!seleccionadoAlMenosUno" class="error-message">Por favor, selecciona al menos un checkbox.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de alerta -->
+<div class="modal" [ngClass]="{'show': showAlertModal}" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>{{ alertMessage }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="closeAlertModal()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
