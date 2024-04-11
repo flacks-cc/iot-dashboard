@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    box-sizing: border-box;
+}
+.navbar-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.navbar-container svg {
+    width: 25px;
+}
+.modal-header {
+  margin: 0;
+  padding-top: 0;
+  background-color: #0f0f0f;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+.modal-header h2 {
+    color: white;
+}
+/* Estilos para todas las tablas */
+.table {
+    border: 0;
+    margin: 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.table input[type="checkbox"] {
+    margin: 0;
+    vertical-align: middle;
+}
+
+.table td:nth-child(2) {
+    font-weight: bold;
+}
+
+.table td:nth-child(3) {
+    font-weight: bold;
+}
+
+.table td:nth-child(4) {
+    font-style: italic;
+}
