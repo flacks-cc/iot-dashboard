@@ -1,6 +1,17 @@
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
 .bienvenida {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 button {
@@ -44,7 +55,7 @@ button:disabled {
     background-color: #fefefe;
     margin: 15% auto;
     /* Centra el modal verticalmente */
-    padding: 20px;
+    /* padding: 20px; */
     border: 1px solid #888;
     width: 80%;
     max-width: 600px;
@@ -75,4 +86,187 @@ button:disabled {
     bottom: 20px;
     right: 20px;
     z-index: 999;
+}
+.warning {
+    width: 200px;
+    height: 200px;
+}
+.navbar {
+    background-color: #000000;
+    padding: 30px;
+}
+.navbar h1 {
+    color: #ffffff;
+    font-size: 24px;
+}
+.btn-agregar {
+    background-color: #1b9445;
+    color: white;
+    border-radius: 5px;
+}
+.btn-agregar:hover {
+    background-color: #147937;
+}
+.btn-secondary {
+    background-color: #ccc;
+    color: black;
+    border-radius: 5px
+}
+.btn-secondary:hover {
+    background-color: #b1b1b1;
+}
+.btn-primary {
+    background-color: #1b9445;
+    color: white;
+    border-radius: 5px;
+}
+.btn-primary:hover {
+    background-color: #147937;
+}
+.btn-terminar {
+    background: #f52121;
+    color: white;
+    border-radius: 5px;
+}
+.btn-terminar:hover {
+    background-color: #b61414;
+}
+.btn-buscar{
+    background-color: #223da1;
+    border-radius: 5px;
+    color: white;
+}
+.btn-buscar:hover{
+    background-color: #1a2b6b;
+}
+.btn-canjear {
+    background-color: #ccc;
+    color: black;
+    border-radius: 5px
+}
+.btn-canjear:hover{
+    background-color: #b1b1b1;
+}
+
+button svg {
+    width: 17px; 
+    height: 17px;
+}
+.sistema-puntos-btns button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+  
+.bienvenida svg {
+    width: 300px;
+}
+.tarjeta-flacks img {
+    width: 50px;
+}
+.tarjeta-flacks {
+    width: 30rem;
+    height: 15rem;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tarjeta-flacks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 330px;
+    height: 200px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #000000 25%, #444444 25%, #444444 50%, #000000 50%, #000000 75%, #daa520 75%, #daa520 100%);    padding: 20px;
+    color: white;
+    position: relative;
+  }
+ .tarjeta-flacks .empresa p {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+ } 
+.logo-flacks img {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    width: 50px; 
+    height: auto;
+  }
+  
+  .tarjeta-flacks h1 {
+    font-size: 24px;
+    margin-bottom: 10px; 
+  }
+  
+  .tarjeta-flacks p {
+    font-size: 14px;
+    margin: 0;
+  }
+  .tarjeta-flacks-info p {
+    text-transform: uppercase;
+    text-align: left;
+  }
+  .tarjeta-flacks-info {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+  }
+  .chip {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: 70px;
+    left: 30px
+  }
+  .chip img {
+   border: 2px solid white;
+   border-radius: 5px;
+  }
+  .chip svg {
+    width: 35px;
+    transform: rotate(90deg);
+  }
+  .sistema-puntos {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sistema-puntos-acciones {
+    margin-top: 20px;
+  }
+  .sistema-puntos-btns {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    width: 500px;
+  }
+  .bienvenida-1 h1 {
+    margin-bottom: 30px;
+  }
+  .custom-select {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.custom-select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.custom-select option {
+    background-color: #fff;
+    color: #333;
 }

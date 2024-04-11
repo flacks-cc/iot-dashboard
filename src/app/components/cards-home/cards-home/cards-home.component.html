@@ -1,13 +1,57 @@
+<nav class="navbar">
+    <div class="navbar-container">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 12H19M5 12L11 6M5 12L11 18" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        <h1>Leer tarjeta</h1>
+    </div>
+</nav>
 <div class="bienvenida">
-    <h1>{{ nombre_usuario ? 'Bienvenido, ' + nombre_usuario : 'Aún no se ha encontrado ningún cliente.' }}</h1>
-    <p *ngIf="nombre_usuario">{{ 'Tienes ' + puntos + ' puntos.' }}</p>
-    <p>{{ nombre_usuario ? '¿Qué operación deseas realizar?' : 'Indícale al cliente que pase su tarjeta frente al lector.' }}</p>
-    <button *ngIf="nombre_usuario" (click)="openModal('agregarPuntos')">Agregar puntos</button>
-    <button (click)="buscarTarjeta()" [disabled]="buscandoTarjeta">Buscar tarjeta</button>
-    <button *ngIf="nombre_usuario" (click)="openModal('canjearPuntos')">Canjear puntos</button>
-    <p *ngIf="buscandoTarjeta">Buscando tarjeta...</p>
-    <button *ngIf="buscandoTarjeta" (click)="terminarBusqueda()">Terminar búsqueda</button>
-</div>
+  <div class="bienvenida-1">
+    <h1 *ngIf="nombre_usuario" class="bienvenida-1">Usuario identificado: {{ nombre_usuario }}</h1>
+  </div>
+        <svg *ngIf="!nombre_usuario" fill="#000000" viewBox="0 0 24 24" id="warning-alt" data-name="Flat Line" class="warning" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M10.25,4.19,2.63,18a2,2,0,0,0,1.75,3H19.62a2,2,0,0,0,1.75-3L13.75,4.19A2,2,0,0,0,10.25,4.19Z" style="fill: #ffc800;"></path><line id="primary-upstroke" x1="12.05" y1="17" x2="11.95" y2="17" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5;"></line><path id="primary" d="M12,9v4M10.25,4.19,2.63,18a2,2,0,0,0,1.75,3H19.62a2,2,0,0,0,1.75-3L13.75,4.19A2,2,0,0,0,10.25,4.19Z" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></g></svg>
+    <h1 *ngIf="!nombre_usuario">Ningún usuario fue encontrado.</h1>
+    <!-- <svg *ngIf="nombre_usuario" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" fill="#4364ea" fill-opacity="0.24"></path> <circle cx="12" cy="10" r="4" fill="#3d41bd"></circle> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2209 18.2462C18.2791 18.3426 18.2613 18.466 18.1795 18.5432C16.5674 20.0662 14.3928 21 12 21C9.60728 21 7.43264 20.0663 5.82057 18.5433C5.73877 18.466 5.72101 18.3427 5.77918 18.2463C6.94337 16.318 9.29215 15 12.0001 15C14.7079 15 17.0567 16.3179 18.2209 18.2462Z" fill="#3d41bd"></path> </g></svg> -->
+    <div class="sistema-puntos">
+        <div *ngIf="nombre_usuario" class="tarjeta-flacks">
+            <div class="tarjeta-flacks-container">
+                <div class="empresa">
+                    <p>FLACK'S BARBERSHOP</p>
+                </div>
+                <div class="chip">
+                    <img src="/assets/chip.png" alt="">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3.18433 8.49038C5.70721 6.55834 8.80394 5.50269 12.0001 5.50269C15.1962 5.50269 18.2929 6.55834 20.8158 8.49038C21.2543 8.82617 21.8843 8.78942 22.2495 8.37512L22.9107 7.62495C23.2759 7.21065 23.2377 6.57619 22.8032 6.23524C19.7292 3.82294 15.9268 2.50269 12.0001 2.50269C8.07336 2.50269 4.27097 3.82294 1.19692 6.23524C0.762441 6.57619 0.724253 7.21065 1.08945 7.62495L1.7507 8.37512C2.1159 8.78942 2.74585 8.82617 3.18433 8.49038Z" fill="#ffffff"></path> <path d="M6.76077 12.1041C8.3171 11.0637 10.1533 10.5021 12.0401 10.5021C13.927 10.5021 15.7632 11.0637 17.3195 12.1041C17.7787 12.411 18.4067 12.3585 18.7601 11.9341L19.4001 11.1658C19.7536 10.7414 19.6982 10.1072 19.247 9.78874C17.1451 8.30554 14.6289 7.50208 12.0401 7.50208C9.45142 7.50208 6.9352 8.30554 4.83332 9.78874C4.38208 10.1072 4.32668 10.7414 4.68014 11.1658L5.32014 11.9341C5.6736 12.3585 6.30163 12.411 6.76077 12.1041Z" fill="#ffffff"></path> <path d="M12.0051 15.5012C11.4067 15.5012 10.8177 15.6205 10.2715 15.8486C9.76182 16.0613 9.13955 15.9678 8.81969 15.5176L8.24052 14.7024C7.92066 14.2521 8.02397 13.6211 8.51272 13.364C9.58522 12.7996 10.7833 12.5012 12.0051 12.5012C13.2269 12.5012 14.425 12.7996 15.4975 13.364C15.9862 13.6211 16.0896 14.2521 15.7697 14.7024L15.1905 15.5176C14.8707 15.9678 14.2484 16.0613 13.7387 15.8486C13.1925 15.6205 12.6036 15.5012 12.0051 15.5012Z" fill="#ffffff"></path> <path d="M12.0001 21.5C13.1047 21.5 14.0001 20.6046 14.0001 19.5C14.0001 18.3954 13.1047 17.5 12.0001 17.5C10.8955 17.5 10.0001 18.3954 10.0001 19.5C10.0001 20.6046 10.8955 21.5 12.0001 21.5Z" fill="#ffffff"></path> </g></svg>
+                </div>
+                <div class="logo-flacks">
+                    <img *ngIf="nombre_usuario" src="/assets/logo-flacks.png" alt="">
+                </div>
+               
+               <div class="tarjeta-flacks-info">
+                    <p *ngIf="nombre_usuario"> {{ nombre_usuario }}<p>
+                    <p *ngIf="nombre_usuario">Puntos: {{ puntos }}</p>
+               </div> 
+            </div>
+                
+        </div>
+        <div class="sistema-puntos-acciones">
+            <p>{{ nombre_usuario ? '¿Qué operación deseas realizar?' : 'Indícale al cliente que pase su tarjeta frente al lector.' }}</p>
+            
+            <div class="sistema-puntos-btns">
+                <button *ngIf="nombre_usuario" (click)="openModal('agregarPuntos')" class="btn-agregar">
+                    Agregar puntos</button>
+                <button (click)="buscarTarjeta()" [disabled]="buscandoTarjeta" class="btn-buscar">
+                    Buscar tarjeta</button>
+                <button *ngIf="nombre_usuario" (click)="openModal('canjearPuntos')"  class="btn-canjear">
+                    Canjear puntos</button>
+            </div>
+                <p *ngIf="buscandoTarjeta">Buscando tarjeta...</p>
+            <button *ngIf="buscandoTarjeta" (click)="terminarBusqueda()" class="btn-terminar">
+                Terminar búsqueda</button>
+        </div>
+           
+    </div>
+    </div>
+   
+
 
 <div class="modo-dios-container">
     <p>Botones para el modo dios</p>
@@ -26,12 +70,11 @@
             <form class="mt-4" [formGroup]="formTarjeta" (ngSubmit)="confirmAddCard()">
                 <div class="modal-body">
                     <p>¿Deseas agregar esta tarjeta?</p>
-                    <select class="form-control form-control-lg" formControlName="nombre_usuario">
-                        <option value="">Selecciona un nombre de usuario</option>
-                        <!-- <option *ngFor="let user of users" [value]="user.nombre">{{ user.nombre }}</option> -->
+                    <select class="form-control form-control-lg custom-select" formControlName="nombre_usuario">
+                        <option value="" selected disabled>Selecciona un nombre de usuario</option>
                         <option>Yerin Axel</option>
                         <option>Bet-birai</option>
-                    </select>
+                    </select>                    
                 </div>                
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"
