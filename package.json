@@ -1,6 +1,11 @@
 {
-  "name": "web-iot-integrador-v",
+  "name": "flacks-cc-iot-dashboard",
   "version": "0.0.0",
+  "description": "Real-time dashboard for monitoring IoT devices, sensor data, and queue management (Angular 18, TypeScript)",
+  "author": {
+    "name": "flacks-cc",
+    "email": "chrisssp.dev@gmail.com"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
