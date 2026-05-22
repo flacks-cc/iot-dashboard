@@ -1,14 +1,19 @@
-<h1 align="center">📊 Flack's Cut & Connect — IoT Dashboard</h1>
+# Flack's Cut & Connect — IoT Dashboard
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Angular-18-DD0031?logo=angular&logoColor=white" alt="Angular">
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/License-GPL_v3-0298c3?logo=gnu&logoColor=white" alt="GPL v3">
+</p>
 
 <p align="center">
   <em>Real-time dashboard for monitoring IoT devices, sensor data, and queue management</em>
 </p>
 
 <p align="center">
-  <a href="https://img.shields.io/badge/Angular-18-DD0031?logo=angular&logoColor=white"><img src="https://img.shields.io/badge/Angular-18-DD0031?logo=angular&logoColor=white" alt="Angular"></a>
-  <a href="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white"><img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript"></a>
-  <a href="https://img.shields.io/badge/License-GPL_v3-0298c3?logo=gnu&logoColor=white"><img src="https://img.shields.io/badge/License-GPL_v3-0298c3?logo=gnu&logoColor=white" alt="GPL v3"></a>
-  <a href="https://img.shields.io/badge/Status-Active-2ea44f"><img src="https://img.shields.io/badge/Status-Active-2ea44f" alt="Active"></a>
+  <a href="https://github.com/flacks-cc/iot-dashboard">Repository</a>
+  ·
+  <a href="https://github.com/flacks-cc/iot-dashboard/issues">Report Bug</a>
 </p>
 
 <p align="center">
@@ -17,14 +22,25 @@
 
 ---
 
-## 🚀 Quick Start
+## About Flack's Cut & Connect
+
+Real-time dashboard built with Angular for monitoring IoT devices, sensor data, and queue management. Enables ticket-based queue system and device status tracking.
+
+## Features
+
+- Monitor IoT devices
+- Real-time queue management
+- Sensor data visualization
+- Ticket generation
+
+## Quick Start
 
 ### Prerequisites
 
 - Node.js 18+
 - Angular CLI
 
-### Installation
+### Setup
 
 ```bash
 git clone https://github.com/flacks-cc/iot-dashboard.git
@@ -33,44 +49,35 @@ npm install
 ng serve
 ```
 
-## 🧩 Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Framework | Angular 18 |
-| Language | TypeScript 5 |
-| Real-time | WebSocket |
-| Auth | JWT |
-
-## 📂 Project Structure
+## Architecture
 
 ```
-iot-dashboard/
-├── src/
-│   ├── app/
-│   ├── assets/
-│   └── ...
-├── angular.json
-├── package.json
-└── README.md
+(TBD)
 ```
 
-## 🤝 Contributing
+## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for branch naming, commit conventions, and PR workflow.
 
-## 📄 License
+## License
 
-GPL v3 — see [LICENSE](LICENSE).
+This project is licensed under the GPL v3 — see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 **Authors:**
 
-- [@chrisssp](https://github.com/chrisssp) — Developer
+- Serrano Puertos Jorge Christian
+- Chávez Moreno José Eduardo
+- Fernández López Kevin Noé
+- Florentino Altamirano Misrael
+- Ortiz Pérez Alejandro
+- Moises Torres Bernabé
 
----
+**Advisors:**
 
-<p align="center">
-  <sub>Built with ❤️ by the flacks-cc team · 2026</sub>
-</p>
+- (TBD)
+
+**Academic Support:**
+
+- (TBD)

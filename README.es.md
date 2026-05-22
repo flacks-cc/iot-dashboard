@@ -1,14 +1,19 @@
-<h1 align="center">📊 Flack's Cut & Connect — IoT Dashboard</h1>
+# Flack's Cut & Connect — IoT Dashboard
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Angular-18-DD0031?logo=angular&logoColor=white" alt="Angular">
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Licencia-GPL_v3-0298c3?logo=gnu&logoColor=white" alt="GPL v3">
+</p>
 
 <p align="center">
   <em>Dashboard en tiempo real para monitoreo de dispositivos IoT, datos de sensores y gestión de colas</em>
 </p>
 
 <p align="center">
-  <a href="https://img.shields.io/badge/Angular-18-DD0031?logo=angular&logoColor=white"><img src="https://img.shields.io/badge/Angular-18-DD0031?logo=angular&logoColor=white" alt="Angular"></a>
-  <a href="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white"><img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript"></a>
-  <a href="https://img.shields.io/badge/Licencia-GPL_v3-0298c3?logo=gnu&logoColor=white"><img src="https://img.shields.io/badge/Licencia-GPL_v3-0298c3?logo=gnu&logoColor=white" alt="GPL v3"></a>
-  <a href="https://img.shields.io/badge/Estado-Activo-2ea44f"><img src="https://img.shields.io/badge/Estado-Activo-2ea44f" alt="Activo"></a>
+  <a href="https://github.com/flacks-cc/iot-dashboard">Repositorio</a>
+  ·
+  <a href="https://github.com/flacks-cc/iot-dashboard/issues">Reportar error</a>
 </p>
 
 <p align="center">
@@ -17,7 +22,18 @@
 
 ---
 
-## 🚀 Inicio rápido
+## Acerca de Flack's Cut & Connect
+
+Dashboard en tiempo real construido con Angular para monitorear dispositivos IoT, datos de sensores y gestión de colas. Permite un sistema de turnos basado en tickets y seguimiento del estado de dispositivos.
+
+## Funcionalidades
+
+- Monitorear dispositivos IoT
+- Gestión de colas en tiempo real
+- Visualización de datos de sensores
+- Generación de tickets
+
+## Inicio rápido
 
 ### Requisitos previos
 
@@ -33,44 +49,35 @@ npm install
 ng serve
 ```
 
-## 🧩 Tecnologías
-
-| Capa | Tecnología |
-|------|-----------|
-| Framework | Angular 18 |
-| Lenguaje | TypeScript 5 |
-| Tiempo real | WebSocket |
-| Autenticación | JWT |
-
-## 📂 Estructura del proyecto
+## Arquitectura
 
 ```
-iot-dashboard/
-├── src/
-│   ├── app/
-│   ├── assets/
-│   └── ...
-├── angular.json
-├── package.json
-└── README.md
+(Pendiente)
 ```
 
-## 🤝 Contribuciones
+## Contribuciones
 
-Lee [CONTRIBUTING.md](CONTRIBUTING.md) para más detalles.
+Lee [CONTRIBUTING.md](CONTRIBUTING.md) para conocer las convenciones de ramas, commits y PRs.
 
-## 📄 Licencia
+## Licencia
 
-GPL v3 — ver [LICENSE](LICENSE).
+Este proyecto está bajo la licencia GPL v3 — ver [LICENSE](LICENSE) para más detalles.
 
-## 🙏 Agradecimientos
+## Agradecimientos
 
 **Authors:**
 
-- [@chrisssp](https://github.com/chrisssp) — Desarrollador
+- Serrano Puertos Jorge Christian
+- Chávez Moreno José Eduardo
+- Fernández López Kevin Noé
+- Florentino Altamirano Misrael
+- Ortiz Pérez Alejandro
+- Moises Torres Bernabé
 
----
+**Advisors:**
 
-<p align="center">
-  <sub>Hecho con ❤️ por el equipo flacks-cc · 2026</sub>
-</p>
+- (TBD)
+
+**Apoyo académico:**
+
+- (TBD)
